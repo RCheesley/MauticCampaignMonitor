@@ -67,6 +67,11 @@ class Synchronizer
         // Compare contacts in Mautic and CM to check for duplicated
         $unknownContacts = $this->compareMauticToCampaignMonitor($this->getMauticContacts(), $this->getCampaignMonitorContacts());
 
+        // If there are not contacts to sync
+        if(count($unknownContacts) === 0){
+            return 'Your contacts are already up to date.';
+        }
+
         // For each contact unknown to mautic
         foreach ($unknownContacts as $email => $name) {
 
