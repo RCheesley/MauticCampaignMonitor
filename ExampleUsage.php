@@ -42,6 +42,11 @@ $config = array(
     'mauticUrl' => '',
 );
 
+if(empty($config['campaignMonitorApiKey']) || empty($config['mauticUsername']) || empty($config['mauticPassword']) || empty($config['mauticUrl'])){
+    echo 'Configuration not set or incomplete';
+    exit;
+}
+
 // New Synchronizer
 $sync = new Synchronizer($config['campaignMonitorApiKey'], $config['mauticUsername'], $config['mauticPassword'], $config['mauticUrl']);
 
