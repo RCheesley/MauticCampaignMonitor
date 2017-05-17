@@ -27,12 +27,13 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Woeler\MauticCampaignMonitor\Synchronizer;
 
-/*
+/**
  * Before using this script make sure that Basic Auth is enabled in your Mautic instance
  * Always make sure your website is using a safe connection (SSL/HTTPS)
  *
  * Configure your settings here and then execute this file to send
  * your CampaignMonitor contacts to your Mautic installation
+ *
  */
 $config = array(
     'campaignMonitorApiKey' => '',

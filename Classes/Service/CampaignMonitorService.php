@@ -36,6 +36,10 @@ class CampaignMonitorService
 
     private $apiKey;
 
+    /**
+     * CampaignMonitorService constructor.
+     * @param string $apiKey
+     */
     function __construct(string $apiKey)
     {
 
@@ -43,6 +47,12 @@ class CampaignMonitorService
 
     }
 
+    /**
+     * Creates a CampaignMonitor API object
+     * @param string $apiType
+     * @param int $objectId
+     * @return CS_REST_Clients|CS_REST_General|CS_REST_Lists
+     */
     public function createCampaignMonitorApi(string $apiType, $objectId = 0)
     {
 

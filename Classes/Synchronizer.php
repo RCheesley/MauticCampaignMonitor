@@ -59,12 +59,13 @@ class Synchronizer
 
 
     /**
+     * Does all the logic and sends the relevant contacts to Mautic
      * @return string
      */
     public function execute(): string
     {
         // Compare contacts in Mautic and CM to check for duplicated
-        $unknownContacts = $this->compareMauticToCampaignMonitor($this->getMauticContacts(), $this->getCampaignMonitorClients());
+        $unknownContacts = $this->compareMauticToCampaignMonitor($this->getMauticContacts(), $this->getCampaignMonitorContacts());
 
         // For each contact unknown to mautic
         foreach ($unknownContacts as $email => $name) {
@@ -91,6 +92,7 @@ class Synchronizer
     }
 
     /**
+     * Compares contacts in CampaignMonitor to contacts in Mautic
      * @param array $mauticContacts
      * @param array $campaignMonitorContacts
      * @return array
@@ -120,9 +122,10 @@ class Synchronizer
     }
 
     /**
+     * Get all the contacts in CampaignMonitor
      * @return array
      */
-    private function getCampaignMonitorClients(): array
+    private function getCampaignMonitorContacts(): array
     {
 
         // Create new general CM API
@@ -170,6 +173,7 @@ class Synchronizer
     }
 
     /**
+     * Get all the contacts in Mautic
      * @return array
      */
     private function getMauticContacts(): array

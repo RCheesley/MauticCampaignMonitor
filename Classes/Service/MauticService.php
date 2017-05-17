@@ -53,6 +53,7 @@ class MauticService
 
 
     /**
+     * Creates a Mautic Auth object
      * @return \Mautic\Auth\AuthInterface
      */
     public function mauticAuthorization(): \Mautic\Auth\AuthInterface
@@ -73,6 +74,7 @@ class MauticService
 
 
     /**
+     * Creates a Mautic API object
      * @param string $apiType
      * @param \Mautic\Auth\AuthInterface $auth
      * @return \Mautic\Api\Api
