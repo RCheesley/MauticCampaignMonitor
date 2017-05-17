@@ -1,0 +1,21 @@
+{
+    "name": "woeler/mautic-campaign-monitor",
+    "description": "Sync contacts from campaignmonitor to Mautic.",
+    "type": "project",
+    "require": {
+        "mautic/api-library": "^2.6",
+        "campaignmonitor/createsend-php": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Woeler\\MauticCampaignMonitor\\": "Classes"
+        }
+    },
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Woeler",
+            "email": "woeler@esoleaderboards.com"
+        }
+    ]
+}
