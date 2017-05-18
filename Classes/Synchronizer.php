@@ -78,16 +78,22 @@ class Synchronizer
             // Separate first and last name
             $names = explode(' ', $name, 2);
             $firstName = $names[0];
-            $lastName = $names[1];
 
             // Array to post to Mautic
-            $toSend = array('firstname' => $firstName, 'lastname' => $lastName, 'email' => $email);
+            $toSend = array('firstname' => $firstName, 'email' => $email);
+
+            if(!empty($names[1])) {
+                $lastName = $names[1];
+                $toSend['lastname'] = $lastName;
+            }
 
             // Create Mautic API
             $contactApi = $this->mauticService->createMauticApi('contacts', $this->mauticAuth);
 
             // Send
             $contactApi->create($toSend);
+
+            echo 'Contact ' . $name . ' exported.' . PHP_EOL;
 
         }
 
